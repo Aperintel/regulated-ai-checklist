@@ -37,8 +37,8 @@ Before the first production call.
 
 - [ ] **Every AI call writes an audit entry.** Every model invocation, every prompt, every response, every guardrail decision is recorded. Default-on; not opt-in. `[EU AI Act Art. 12]`
 - [ ] **Audit entries are tamper-evident.** The audit log is hash-chained, append-only, and cryptographically signed. A regulator asking "did you change this entry" can be answered with mathematical confidence, not assertion. `[EU AI Act Art. 12]`
-- [ ] **Audit entries include enough to reconstruct the decision.** At minimum: input fingerprint, model identity, prompt template, response, timestamp, requester identity, policy decisions taken on the call. `[EU AI Act Art. 12, Art. 19]`
-- [ ] **Audit log retention period is set.** Defined in writing, aligned to the relevant regulation (GDPR has its own clock; FCA SYSC 9.1 has its own; sector-specific rules may extend). Automated deletion runs on the same clock. `[EU AI Act Art. 12]`
+- [ ] **Audit entries include enough to reconstruct the decision.** At minimum: input fingerprint, model identity, prompt template, response, timestamp, requester identity, policy decisions taken on the call. `[EU AI Act Art. 12]`
+- [ ] **Audit log retention period is set.** Defined in writing, aligned to the relevant regulation (GDPR has its own clock; FCA SYSC 9.1 has its own; sector-specific rules may extend). Automated deletion runs on the same clock. `[EU AI Act Art. 19]`
 - [ ] **Audit log is independently verifiable.** A third party (an auditor, a regulator, the buyer's internal audit team) can verify the chain without access to your systems.
 - [ ] **Provenance for training data is documented.** Where the model was trained, on what data, when, and what licence applies. "We use a third-party API" requires the API vendor's training-data provenance, too. `[EU AI Act Art. 10]`
 
@@ -83,7 +83,7 @@ Before the system goes to first paying customer.
 
 Before you announce general availability.
 
-- [ ] **Incident playbook is written.** What happens when a regulator phones at 09:00 on a Monday asking about a specific decision. Who is paged. What artefacts are produced. What the customer is told. Practised in writing; ideally in a drill. `[EU AI Act Art. 73]`
+- [ ] **Incident playbook is written.** What happens when a regulator phones at 09:00 on a Monday asking about a specific decision. Who is paged. What artefacts are produced. What the customer is told. Practised in writing; ideally in a drill. `[EU AI Act Art. 17, Art. 73]`
 - [ ] **Decision-rollback path exists.** When you discover that a model was producing wrong outputs for a specific cohort, you can identify the affected decisions, freeze further AI processing for that cohort, and surface a list to the operator within hours, not weeks.
 - [ ] **Kill switch is operational.** A single control disables AI decision-making for the affected scope. The kill switch is tested quarterly. The action is audit-logged. `[EU AI Act Art. 14]`
 - [ ] **Breach notification clock is understood.** Under UK and EU GDPR you have 72 hours to notify the relevant regulator. The on-call team knows this, and knows what counts as a "breach" in your specific system. `[GDPR Art. 33]`
